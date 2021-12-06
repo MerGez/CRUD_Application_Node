@@ -10,10 +10,11 @@ var schema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    gender : String,
-    status : String
+    password : String,
+    role : String,
+    commande : String
 })
 
-const Userdb = mongoose.model('userdb', schema);
+const Userdb = mongoose.model('user', schema);
 
 module.exports = Userdb;
