@@ -1,0 +1,23 @@
+ <!-- form handling -->
+ <form action="/api/items" method="POST" id="add_item">
+    <div class="new_item">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Nom de l'Outil">
+        </div>
+        <div class="form-group">
+            <label for="quantity" class="text-light">Quantite</label>
+            <input type="number" name="quantity" value="" placeholder="0">
+        </div>
+        <div class="form-group">
+            <label for="price" class="text-light">Prix</label>
+            <input type="number" name="price" value="" placeholder="1">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>

@@ -3,7 +3,32 @@
 <!-- /include header -->
 
   <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a href="/add-item" class="border-shadow">
+                <span class="text-gradient">New Item <i class="fas fa-user"></i></span>
+            </a>
+        </div>
 
+        <!-- form handling -->
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Article</th>
+                        <th>Quantite</th>
+                        <th>Prix</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('include/_show_items') %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
 <!-- /Main Site -->
 
 <!-- include footer -->

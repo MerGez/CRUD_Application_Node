@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Application</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Application</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+   <!-- Semantic UI CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> 
 </head>
+
 <body>
-    
-    <!-- Header -->
-        <header id="header">
-            <nav>
-                <div class="container">
-                    <div class="text-center">
-                        <a href="/" class="nav-brand text-dark">Inventory Management System</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    <!-- /Header -->
+
+  <!-- Header -->
+  <!-- <header class="site-header">
+    <a href="#0" class="logo">Logo</a>
+
+    <nav class="site-nav">
+      <ul id>
+        <li id="home"><a href="/">Home</a></li>
+        <li id="inventaire"><a href="/">Inventaire</a></li>
+        <li id="users"><a href="/users">Users</a></li>
+        <li id="commandes"><a href="/commandes">Commandes</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <div class="dropdown">
+        
+      </div>
+
+      <a href="/logout" class="sign-out-link">Sign Out</a>
+    </div>
+  </header> -->
+  <!-- /Header -->
+
+  <%- include('_sidebar') %>
