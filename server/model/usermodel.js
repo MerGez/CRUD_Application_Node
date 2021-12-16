@@ -4,6 +4,7 @@ var schema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
+    unique: true,
   },
   email: {
     type: String,
@@ -13,8 +14,8 @@ var schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  role: String,
-  commande: String,
+  //cart: [cartSchema]
+  //commande: [commandeSchema]
 });
 
 const Userdb = mongoose.model("user", schema);

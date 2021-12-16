@@ -51,6 +51,9 @@ switch (window.location.pathname) {
     case '/users':
         $('#users').addClass('active');
         break;
+    case '/add-user':
+        $('#users').addClass('active');
+        break;
     case '/add-item':
         $('#add-item').addClass('active');
         break;

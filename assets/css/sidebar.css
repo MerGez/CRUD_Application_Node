@@ -43,6 +43,19 @@
 	color: white;
 }
 
+#sidebar li:hover {
+    background: #552cad;
+}
+#sidebar li:hover a{
+    color: white;
+}
+
+#logout {
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+}
+
   /* for toggle behavior */
   
   #sidebar.active {

@@ -4,12 +4,41 @@
     <td><%= items[i].quantity %></td>
     <td><%= items[i].price %></td>
     <td>
-        <a href="/update-item?id=<%= items[i]._id%>" class="btn border-shadow update">
-            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
-        </a>
-        <a class="btn border-shadow delete" data-id=<%= items[i]._id%> >
-            <span class="text-gradient"><i class="fas fa-times"></i></span>
-        </a>
+        <%if (username == 'admin') { %>
+            <a href="/update-item?id=<%= items[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= items[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        <% } else{ %>
+            <%if (items[i].quantity > 0) {%>
+                <div id=add-to-cart<%= i%>>
+                    <input type="number" name="quantity" value="1" max=<%= items[i].quantity %> style= "width: 50px;">
+                    <a href="/add-to-cart?id=<%= items[i]._id%>" onclick="addQuantity('<%= i%>')" class="btn border-shadow update">
+                        <span class="text-gradient"><i class="fas fa-shopping-cart"></i></span>
+                    </a>
+                </div>
+            <% } %>
+        <% } %>
     </td>
 </tr>
 <% } %>
+<script>
+    function addQuantity(rowNumber) {
+        var row = '#add-to-cart' + rowNumber
+        $(row).on('click', "a", (function(ev) {
+            ev.stopImmediatePropagation()
+            ev.preventDefault()
+            var quantity = $(row).children()[0].value
+            var _href = this.href
+            if(!_href.includes('quantity')){
+                $(this).attr('href', _href + "&quantity=" + quantity)    
+            }else{
+                _href = _href.replace(/\&quantity=(\d+)/, '&quantity=' + quantity)
+                $(this).attr('href', _href)
+            }
+            console.log(this.href)
+        }))
+    }
+</script>

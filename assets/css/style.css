@@ -140,7 +140,7 @@ table {
 }
 
 .table tr:hover {
-    background-color: #06d6a0;
+    background-color: #00beff;
 }
 
 .table tr:hover td>a {

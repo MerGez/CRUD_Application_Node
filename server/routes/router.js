@@ -6,54 +6,28 @@ const userController = require('../controller/usercontroller');
 const itemController = require('../controller/itemcontroller');
 const passport = require('passport');
 
-/**
- *  @description Root Route
- *  @method GET /
- */
- route.get('/', isLoggedIn, services.homeRoutes)
 
- /**
- *  @description Login Route
- *  @method GET /login
- */
+route.get('/', isLoggedIn, services.homeRoutes)
+
 route.get('/login', (req, res) =>{
     res.render('login', {title: "login"})
 })
-
 route.get('/logout', isLoggedIn, (req, res) => {
     req.logOut()
     res.redirect('/login')
 })
 
- /**
- *  @description add items
- *  @method GET /add-item
- */
-route.get('/add-item', isLoggedIn, services.add_item)
+route.get('/commandes', isLoggedIn, services.commandesRoutes)
 
-/**
- *  @description for update item
- *  @method GET /update-item
- */
-route.get('/update-item', isLoggedIn, services.update_item)
+route.get('/add-item', isLoggedIn, isAdmin, services.add_item)
 
-/**
- *  @description Users List Route
- *  @method GET /users
- */
-route.get('/users', isLoggedIn, services.usersRoutes)
+route.get('/update-item', isLoggedIn, isAdmin, services.update_item)
 
-/**
- *  @description add users
- *  @method GET /add-user
- */
-route.get('/add-user', isLoggedIn, services.add_user)
+route.get('/users', isLoggedIn, isAdmin, services.usersRoutes)
 
-/**
- *  @description for update user
- *  @method GET /update-user
- */
-route.get('/update-user', isLoggedIn, services.update_user)
+route.get('/add-user', isLoggedIn, isAdmin, services.add_user)
+
+route.get('/update-user', isLoggedIn, isAdmin, services.update_user)
 
 
 // API
@@ -75,6 +49,13 @@ function isLoggedIn(req, res, next) {
 function isLoggedOut(req, res, next) {
 	if (!req.isAuthenticated()) return next()
 	res.redirect('/')
+}
+function isAdmin(req, res, next){
+	if (req.isAuthenticated()){
+		if ( req.user.username != 'admin') res.redirect('/')
+		else return next()
+	}
+	
 }
 
 module.exports = route

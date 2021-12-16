@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/sidebar.css">
 <div class="vertical-nav bg-white" id="sidebar">
-    <div class="py-4 px-3 mb-4" style ="background-color: #2b2d42;">
+    <div class="py-4 px-3 mb-4" style="background-color: #2b2d42;">
         <div class="media d-flex align-items-center">
             <div class="media-body">
                 <p class="font-weight-light text-white text-center mb-0">
@@ -9,10 +9,10 @@
             </div>
         </div>
     </div>
-    <form action="/logout" method="GET">
-        <center><button type="submit" class="btn btn-danger">
-                <p class="text-white">Log Out</p>
-            </button></center>
+    <form action="/logout" method="GET" id="logout">
+        <button type="submit" class="btn btn-danger">
+            <p class="text-white">Log Out</p>
+        </button>
     </form>
     <h5 class="ui horizontal divider header text-primary">
         MAIN
@@ -22,26 +22,20 @@
         <li id="home" class="nav-item">
             <a href="/" class="nav-link font-italic">
                 <p><i class="home icon"></i>
-                    Dashboard
+                    Inventaire
                 </p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="/orders" class="nav-link font-italic">
+            <a href="/commandes" class="nav-link font-italic">
                 <i class="eye icon"></i>
                 Commandes
             </a>
         </li>
-        <li id="inventaire" class="nav-item">
-            <a href="/" class="nav-link font-italic">
-                <i class="tags icon"></i>
-                Inventaire
-            </a>
-        </li>
-        <li id ="add-item" class="nav-item">
-            <a href="/add-item" class="nav-link font-italic">
-                <i class="plus circle icon"></i>
-                Ajouter Article
+        <li class="nav-item">
+            <a href="/cart" class="nav-link font-italic">
+                <i class="eye icon"></i>
+                Paniers
             </a>
         </li>
     </ul>
@@ -51,16 +45,16 @@
     </h5>
 
     <ul class="nav flex-column bg-white mb-0">
-        <li id ="users" class="nav-item">
+        <li id="users" class="nav-item">
             <a href="/users" class="nav-link font-italic">
                 <i class="users icon"></i>
                 Utilisateurs
             </a>
         </li>
-        <li class="nav-item">
-            <a href="/categories" class="nav-link font-italic">
-                <i class="bookmark icon"></i>
-                Categories
+        <li id="add-item" class="nav-item">
+            <a href="/add-item" class="nav-link font-italic">
+                <i class="plus circle icon"></i>
+                Ajouter Article
             </a>
         </li>
         <li class="nav-item">
